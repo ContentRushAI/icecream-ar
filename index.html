@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contentrush.ai AR</title>
+
+  <script type="module"
+    src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js">
+  </script>
+
+  <style>
+
+    body{
+      margin:0;
+      overflow:hidden;
+      background:white;
+      font-family:Arial, sans-serif;
+    }
+
+    model-viewer{
+      width:100vw;
+      height:100vh;
+      background:white;
+    }
+
+    .top{
+      position:absolute;
+      top:20px;
+      width:100%;
+      text-align:center;
+      z-index:10;
+    }
+
+    .cafe{
+      font-size:34px;
+      font-weight:bold;
+      color:#111;
+    }
+
+    .price{
+      font-size:22px;
+      margin-top:5px;
+      color:#555;
+    }
+
+    #ar-button{
+      background:black;
+      color:white;
+      border:none;
+      border-radius:14px;
+      padding:12px 24px;
+      font-size:18px;
+      position:absolute;
+      top:110px;
+      left:50%;
+      transform:translateX(-50%);
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="top">
+  <div class="cafe">contentrush.ai</div>
+  <div class="price">Ice Cream Tub - ₹200</div>
+</div>
+
+<model-viewer
+src="icecream.glb"
+scale="0.08 0.08 0.08"
+ar
+ar-modes="scene-viewer webxr quick-look"
+camera-controls
+auto-rotate
+shadow-intensity="1"
+exposure="1"
+environment-image="neutral">
+
+<button slot="ar-button" id="ar-button">
+View In AR
+</button>
+
+</model-viewer>
+
+</body>
+</html>
