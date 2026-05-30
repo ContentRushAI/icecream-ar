@@ -1,92 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Contentrush.ai AR</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script type="module"
-    src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js">
-  </script>
+<title>ContentRush.AI</title>
 
-  <style>
+<style>
 
-    body{
-      margin:0;
-      overflow:hidden;
-      background:white;
-      font-family:Arial, sans-serif;
-    }
+body{
+margin:0;
+font-family:Arial;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:#111;
+color:white;
+text-align:center;
+padding:20px;
+}
 
-    model-viewer{
-      width:100vw;
-      height:100vh;
-      background:white;
-    }
+.box{
+max-width:500px;
+}
 
-    .top{
-      position:absolute;
-      top:20px;
-      width:100%;
-      text-align:center;
-      z-index:10;
-    }
+h1{
+font-size:42px;
+margin-bottom:20px;
+}
 
-    .cafe{
-      font-size:34px;
-      font-weight:bold;
-      color:#111;
-    }
+p{
+font-size:24px;
+line-height:1.6;
+}
 
-    .price{
-      font-size:22px;
-      margin-top:5px;
-      color:#555;
-    }
+</style>
 
-    #ar-button{
-      background:black;
-      color:white;
-      border:none;
-      border-radius:14px;
-      padding:12px 24px;
-      font-size:18px;
-      position:absolute;
-      top:110px;
-      left:50%;
-      transform:translateX(-50%);
-    }
-
-  </style>
-<script data-goatcounter="https://contentrushai.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
 </head>
 
 <body>
 
-<div class="top">
-  <div class="cafe">contentrush.ai</div>
-  <div class="price">Ice Cream Tub - ₹200</div>
+<div class="box" id="content">
+
+<h1>Loading...</h1>
+
 </div>
 
-<model-viewer
-src="icecream.glb"
-scale="0.08 0.08 0.08"
-ar
-ar-modes="scene-viewer webxr quick-look"
-camera-controls
-auto-rotate
-shadow-intensity="1"
-exposure="1"
-environment-image="neutral">
+<script>
 
-<button slot="ar-button" id="ar-button">
-View In AR
-</button>
+let active = false;
 
-</model-viewer>
+if(active){
+
+window.location.href = "menu.html";
+
+}else{
+
+document.getElementById("content").innerHTML = `
+<h1>ContentRush.AI</h1>
+
+<p>
+Please subscribe to continue viewing the AR menu.
+</p>
+`;
+
+}
+
+</script>
 
 </body>
 </html>
